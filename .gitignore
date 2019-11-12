@@ -1,0 +1,4 @@
+.idea/
+app/.idea/
+node_modules/
+.env
