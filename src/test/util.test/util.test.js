@@ -18,8 +18,11 @@ testvalidDate = () => {
 
 testisInRange = () => {
     const response = util.isInRange(a, c, b, 'DD/MM/YYYY');
-    if(response)
-         console.log(true);
+    if(response){
+        console.log(true);
+    }else{
+        console.log(response)
+    }
 };
 
 testtranslateDay();
