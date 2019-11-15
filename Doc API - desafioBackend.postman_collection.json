@@ -1,0 +1,230 @@
+{
+  "info": {
+    "_postman_id": "3112dab4-2bc7-47ca-9012-32a685f63134",
+    "name": "Doc API - desafioBackend",
+    "description": "# Introduction\nGerenciamento de horários de uma clínica\n\n# Authentication\nNão é preciso utilizar autenticação para fazer requisições a esta API.\n\n# Error Codes\n**400 – Bad Request**\n\n",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "/rules - regra de atendimento dia especifico",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"days\": [\r\n    { \r\n      \"day\": \"24/12/2019\",\r\n      \"intervals\": \r\n      [ \r\n        {\r\n          \"start\": \"9:30\",\r\n          \"end\": \"10:20\"\r\n        },\r\n        {\r\n          \"start\": \"10:30\",\r\n          \"end\": \"11:00\"\r\n        }\r\n      ]\r\n   }\r\n  ]\r\n  \r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/rules",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "rules"
+          ]
+        },
+        "description": "Exemplo de requisição de criação de regra de atendimento para dia especifico na seção \"Cadastro de regra de atendimento\""
+      },
+      "response": []
+    },
+    {
+      "name": "/rules - regra de atendimento diário",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"days\": [\r\n    { \r\n      \"day\": \"diariamente\",\r\n      \"intervals\": \r\n      [ \r\n        {\r\n          \"start\": \"9:30\",\r\n          \"end\": \"10:10\"\r\n        }\r\n      ]\r\n   }\r\n  ]\r\n  \r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/rules",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "rules"
+          ]
+        },
+        "description": "Exemplo de requisição de criação de regra de atendimento diário na seção \"Cadastro de regra de atendimento\""
+      },
+      "response": []
+    },
+    {
+      "name": "/rules - regra de atendimento semanal",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"days\": [\r\n    { \r\n      \"day\": \"segundas\",\r\n      \"intervals\": \r\n      [ \r\n        {\r\n          \"start\": \"14:00\",\r\n          \"end\": \"14:30\"\r\n        }\r\n      ]\r\n   },\r\n   { \r\n     \"day\": \"quartas\",\r\n     \"intervals\": \r\n      [ \r\n        {\r\n          \"start\": \"14:00\",\r\n          \"end\": \"14:30\"\r\n        }\r\n      ]\r\n   }\r\n  ]\r\n  \r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/rules",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "rules"
+          ]
+        },
+        "description": "Exemplo de requisição de criação de regra de atendimento semanal na seção \"Cadastro de regra de atendimento\""
+      },
+      "response": []
+    },
+    {
+      "name": "/rules?id",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/rules?id=k2w29n0r3h45c7dxzjx",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "rules"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "k2w29n0r3h45c7dxzjx"
+            }
+          ]
+        },
+        "description": "Apaga uma regra especifica criada pelo endpoint /rules a partir de um identificador."
+      },
+      "response": []
+    },
+    {
+      "name": "/rules",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/rules",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "rules"
+          ]
+        },
+        "description": "Lista as regras de atendimento criadas pelo endpoint /rules"
+      },
+      "response": []
+    },
+    {
+      "name": "/schedules",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"startDate\":\"12/11/2019\",\n\t\"endDate\":\"20/11/2019\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/schedules",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "schedules"
+          ]
+        },
+        "description": "Retorna os horários disponíveis baseado nas regras criadas no endpoint /rules, considerando um intervalo de datas informadas na requisição."
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
+}
